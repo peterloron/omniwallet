@@ -1,7 +1,7 @@
 <div ng-controller="NavigationController" ng-init="getNavData();modalOpened=false">
   <div class="navbar navbar-default navbar-fixed-top">
 
-<a class="navbar-brand" href="/"><img src="/assets/img/logo-beta.png" alt="mastercoin"></a>
+<a class="navbar-brand" href="/"><img src="/assets/img/mc_logo_beta.png" alt="merchantcoin"></a>
         <div class="navbar-header" ng-show="user.loggedIn">
             <br /><div class="btn btn-default" ng-click="openUUIDmodal()">Wallet ID<br /><small>{{ user.wallet.uuid }}</small></div>
         </div>
@@ -21,7 +21,7 @@
               <li ng-show="user.loggedIn"><a href="/wallet/overview">My Wallet</a></li>
               <li><a href="/explorer/overview">Explorer</a></li>
               <li><a href="/about">About</a></li>
-              <li><a href="/status">Status</a></li>
+              <!-- <li><a href="/status">Status</a></li> -->
               <li ng-show="user.loggedIn"><a href="/" ng-click="logout()">Logout</a></li>
             </ul>
         </div>
