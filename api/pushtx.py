@@ -68,7 +68,7 @@ def pushtxnode(signed_tx):
 def pushtx(signed_tx):
     info(signed_tx)
 
-    f = tempfile.NamedTemporaryFile(mode='r+b',prefix='signedtx-', delete=False, dir='/var/lib/omniwallet/tmptx')
+    f = tempfile.NamedTemporaryFile(mode='r+b',prefix='signedtx-', delete=False, dir='/opt/omniwallet-data/tmptx')
     f.write(signed_tx)
     f.close()
 

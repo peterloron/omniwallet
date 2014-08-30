@@ -14,7 +14,7 @@ def generate_stats():
   if platform.system() == "Darwin": # This could be removed at one point, just here for development
     wallet_path = "/tmp/wallets"
   else:
-    wallet_path = "/var/lib/omniwallet/wallets"
+    wallet_path = "/opt/omniwallet-data/wallets"
   try:
     wallet_files = os.listdir(wallet_path)
     amount_of_wallets = len(wallet_files)

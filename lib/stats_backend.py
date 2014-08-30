@@ -13,7 +13,7 @@ class StatsBackend(object):
             if platform.system() == "Darwin":  # For my local dev I need this hack
                 options = {"db_path": "/tmp/stats.json"}
             else:
-                options = {"db_path": "/var/lib/omniwallet/www/stats.json"}
+                options = {"db_path": "/opt/omniwallet-data/www/stats.json"}
         self.engine = StatsFileBackend(options)
 
     def put(self, key, val):

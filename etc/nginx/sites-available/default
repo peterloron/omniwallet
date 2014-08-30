@@ -59,53 +59,53 @@ server {
     }
 
     location ~ "^/v1/transaction/values.json$" {
-        alias /var/lib/omniwallet/www/values.json;
+        alias /opt/omniwallet-data/www/values.json;
     }
 
     location ~ "^/v1/system/stats.json$" {
-        alias /var/lib/omniwallet/www/stats.json;
+        alias /opt/omniwallet-data/www/stats.json;
     }
 
     location ~ "^/v1/system/status.html$" {
-        alias /var/lib/omniwallet/www/status.html;
+        alias /opt/omniwallet-data/www/status.html;
     }
 
     location ~ "^/v1/system/revision.json$" {
-        alias /var/lib/omniwallet/www/revision.json;
+        alias /opt/omniwallet-data/www/revision.json;
     }
 
     location ~ "^/v1/exchange/offers/(.*)$" {
-        alias /var/lib/omniwallet/www/offers/$1;
+        alias /opt/omniwallet-data/www/offers/$1;
     }
 
     location ~ "^/v1/transaction/general/(.*)$" {
-        alias /var/lib/omniwallet/www/general/$1;
+        alias /opt/omniwallet-data/www/general/$1;
     }
 
     location ~ "^/v1/transaction/tx/(.*)$" 
-        alias /var/lib/omniwallet/www/tx/$1;
+        alias /opt/omniwallet-data/www/tx/$1;
     }
 
     location ~ "^/v1/property/([0-9]*.json)$" {
         add_header Access-Control-Allow-Origin *;
-        alias /var/lib/omniwallet/www/properties/properties-$1;
+        alias /opt/omniwallet-data/www/properties/properties-$1;
     }
 
     location ~ "^/v1/values/(.*)$" {
         add_header Access-Control-Allow-Origin *;
-        alias /var/lib/omniwallet/www/values/$1;
+        alias /opt/omniwallet-data/www/values/$1;
     }
 
     location ~ "^/v1/values/history/(.*)$" {
-        alias /var/lib/omniwallet/www/values/history/$1;
+        alias /opt/omniwallet-data/www/values/history/$1;
     }
 
     location ~ "^/v1/address/verify/(.*)$" {
-        alias /var/lib/omniwallet/www/mastercoin_verify/addresses/$1;
+        alias /opt/omniwallet-data/www/mastercoin_verify/addresses/$1;
     }
 
     location ~ "^/v1/transaction/verify/(.*)$" {
-        alias /var/lib/omniwallet/www/mastercoin_verify/transactions/$1;
+        alias /opt/omniwallet-data/www/mastercoin_verify/transactions/$1;
     }
 
     include uwsgi_params;

@@ -1,4 +1,4 @@
-DATADIR="/var/lib/omniwallet"
+DATADIR="/opt/omniwallet-data"
 
 if [ "$1" = "-status" ]; then
   cat $DATADIR/www/revision.json | cut -d"," -f3
