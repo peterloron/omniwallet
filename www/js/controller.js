@@ -215,12 +215,23 @@ function NavigationController($scope, $http, $modal, userService) {
       });
     }
   };
-
+/*
   $scope.openNewUUIDmodal = function() {
     $modal.open({
       templateUrl: '/partials/wallet_new_modal.html',
       controller: WalletController
     });
+  };
+*/
+  $scope.openNewUUIDmodal = function() {
+    var modalInstance = $modal.open({
+      templateUrl: '/partials/wallet_new_modal.html',
+      controller: WalletController
+    });
+      modalInstance.result.then(function(){},
+      function(){
+        $scope.modalOpened = false;
+      });
   };
 
   $scope.logout = function() {

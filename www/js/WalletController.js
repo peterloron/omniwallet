@@ -1,6 +1,7 @@
 
 
 function WalletController($scope, $q, $http, $modal, $location, userService) {
+  $scope.dismiss = $modal.dismiss;
   $scope.uuid = userService.getUUID();
   $scope.loginLink = $location.protocol() + "://" + $location.host() + "/login/" + $scope.uuid;
   //console.log(userService.getAllAddresses());
