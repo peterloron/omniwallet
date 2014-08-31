@@ -69,11 +69,11 @@ var app = angular.module('omniwallet', [
 
   $routeProvider.when('/about/:page?', {
       templateUrl: function(route) {
-        var availableViews = ['omniwallet', 'mastercoin', 'faq' ];
+        var availableViews = ['merchantcoinwallet', 'merchantcoin', 'faq' ];
 
         var viewFound = availableViews.indexOf(route.page);
         if (viewFound == -1) //Default view
-          route.page = 'omniwallet';
+          route.page = 'merchantcoinwallet';
 
         var view = '/partials/about_' + route.page + '.html';
         //DEBUG console.log(view, route.page, view == '/wallet_addresses.html')
