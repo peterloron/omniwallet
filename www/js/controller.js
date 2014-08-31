@@ -20,6 +20,16 @@ function HomeCtrl($scope, $templateCache, $injector, $location, $http, $q) {
      //console.log('checking '+address);
       return Bitcoin.Address.validate(address);
     };
+
+    // handle type search parameter
+    if ($location.search().type == 'create') {
+      openCreateModal();
+    } else if ($location.search().type == 'login') {
+      openLoginModal();
+    } else {
+      //nothing
+    }
+
     $scope.checkBalance = function() {
       var balances = {};
       var appraiser = $injector.get('appraiser');

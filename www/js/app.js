@@ -91,7 +91,7 @@ var app = angular.module('omniwallet', [
       templateUrl: '/status.html',
       controller: StatsCtrl
     }).otherwise({
-    redirectTo: '/'
+      redirectTo: '/'
   });
 
   $locationProvider.html5Mode(true).hashPrefix('!');
