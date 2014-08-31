@@ -69,7 +69,7 @@ var app = angular.module('omniwallet', [
 
   $routeProvider.when('/about/:page?', {
       templateUrl: function(route) {
-        var availableViews = ['merchantcoinwallet', 'merchantcoin', 'faq' ];
+        var availableViews = ['omniwallet', 'mastercoin', 'contact', 'faq' ];
 
         var viewFound = availableViews.indexOf(route.page);
         if (viewFound == -1) //Default view
@@ -100,7 +100,7 @@ var app = angular.module('omniwallet', [
 
 app.config(function() {}).run(function(userService, $location) {
   //Whitelist pages
-  whitelisted = ['login', 'about', 'explorer'];
+  whitelisted = ['login', 'about', 'status', 'explorer'];
 
   if (!userService.loggedIn()) {
     for (var i = 0; i < whitelisted.length; i++) {
