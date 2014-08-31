@@ -25,7 +25,27 @@ function HomeCtrl($scope, $templateCache, $injector, $location, $http, $q) {
     if ($location.search().type == 'create') {
       openCreateModal();
     } else if ($location.search().type == 'login') {
-      openLoginModal();
+      $scope.login ={
+        title:'Login',
+        button:'Open Wallet'
+      };
+      if (!$scope.modalOpened) {
+        $scope.modalOpened = true;
+        var modalInstance = $modal.open({
+        templateUrl: '/partials/login_modal.html',
+        controller: LoginController,
+        scope: $scope,
+        backdrop:'static'
+        });
+        modalInstance.result.then(
+        function(){
+          // reset modal state when user logs in successfully
+          $scope.modalOpened = false;
+        },
+        function(){
+          $scope.modalOpened = false;
+        });
+      }
     } else {
       //nothing
     }
